@@ -18,7 +18,6 @@ sudo add-apt-repository -y ppa:mpstark/elementary-tweaks-daily # Elementary Twea
 # Basic update
 sudo apt-get -y --force-yes update
 sudo apt-get -y --force-yes upgrade
-sudo add-apt-repository ppa:mpstark/elementary-tweaks-daily
 
 # Install apps. Comment out if not needed
 sudo apt-get -y install \
