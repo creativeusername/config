@@ -5,6 +5,7 @@ rm -rf ~/Documents
 rm -rf ~/Public
 rm -rf ~/Templates
 rm -rf ~/Videos
+rm -rf ~/Pictures
 rm -rf ~/Music
 mkdir ~/College
 mkdir ~/Git
@@ -13,7 +14,9 @@ mkdir ~/Projects
 # Adding needed PPAs to apt
 sudo add-apt-repository -y ppa:webupd8team/atom # Atom.io Text Editor
 sudo add-apt-repository -y "deb http://dl.google.com/linux/chrome/deb/ stable main" # Chrome Browser
+wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo add-apt-repository -y ppa:mpstark/elementary-tweaks-daily # Elementary Tweaks for 0.3 Freya
+
 
 # Basic update
 sudo apt-get -y --force-yes update
@@ -26,17 +29,18 @@ sudo apt-get -y install \
     curl \
     elementary-tweaks \
     google-chrome-stable \
-    # thinkfan \
     atom
+    # thinkfan \
 
 # Configure System
 cd Git && git clone https://github.com/creativeusername/config.git && cd ~
 cp -f ~/Git/config/bash_aliases ~/.bash_aliases
 cp -f ~/Git/config/gitconfig ~/.gitconfig
-cp -f ~/Git/config/%gconf.xml ~/.gconf/apps/guake/genreal/%gconf.xml
+cp -f ~/Git/config/%gconf.xml ~/.gconf/apps/guake/general/%gconf.xml
 
 # Install Node Version Manager
 curl https://raw.githubusercontent.com/creationix/nvm/v0.24.1/install.sh | bash
+. ~/.bashrc
 nvm install stable
 nvm alias default stable
 
