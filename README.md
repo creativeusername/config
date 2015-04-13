@@ -14,4 +14,4 @@ TODO:
 ## Installation
 Don't run this if you don't know excatly what this is doing!
 
-`wget https://raw.githubusercontent.com/creativeusername/config/master/provision.sh -O - | sudo sh`
+`wget https://raw.githubusercontent.com/creativeusername/config/master/provision.sh -O - | sh`
