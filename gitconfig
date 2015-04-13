@@ -1,0 +1,22 @@
+[user]
+	name = Maximilian Kerp
+  email =
+[alias]
+  br = branch
+  ci = commit
+  co = checkout
+	s = status -s
+  st = status
+	lg = log --oneline --decorate --all --graph
+  lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+  lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+[color]
+	ui = true
+[branch]
+	autosetuprebase = always
+[push]
+	default = current
+[rerere]
+	enabled = true
+[core]
+	autocrlf = input
