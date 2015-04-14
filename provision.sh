@@ -33,7 +33,7 @@ sudo apt-get -y install \
     # thinkfan \
 
 # Configure System
-cd Git && git clone https://github.com/creativeusername/config.git && cd ~
+cd ~/Git && git clone https://github.com/creativeusername/config.git && cd ~
 cp -f ~/Git/config/bash_aliases ~/.bash_aliases
 cp -f ~/Git/config/gitconfig ~/.gitconfig
 cp -f ~/Git/config/%gconf.xml ~/.gconf/apps/guake/general/%gconf.xml
