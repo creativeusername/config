@@ -35,14 +35,18 @@ sudo apt-get -y install \
 # Configure System
 cd ~/Git && git clone https://github.com/creativeusername/config.git && cd ~
 cp -f ~/Git/config/bash_aliases ~/.bash_aliases
+. ~/.bashrc
 cp -f ~/Git/config/gitconfig ~/.gitconfig
-cp -f ~/Git/config/%gconf.xml ~/.gconf/apps/guake/general/%gconf.xml
+gconftool --load ~/Git/config/guake.settings
 
 # Install Node Version Manager
 curl https://raw.githubusercontent.com/creationix/nvm/v0.24.1/install.sh | bash
-. ~/.bashrc
-nvm install stable
-nvm alias default stable
+# TODO
+# sourcing bashrc has no effect on the current shell thus it does not see
+# nvm. It might work running these two commands in a subshell. I have to read
+# up on that
+# nvm install stable
+# nvm alias default stable
 
 # Configure Node, Install all needed packages
 # TODO
