@@ -35,7 +35,7 @@ sudo apt-get -y install \
 # Configure System
 cd ~/Git && git clone https://github.com/creativeusername/config.git && cd ~
 cp -f ~/Git/config/bash_aliases ~/.bash_aliases
-. ~/.bashrc
+cp -f ~/Git/config/bashrc ~/.bashrc
 cp -f ~/Git/config/gitconfig ~/.gitconfig
 gconftool --load ~/Git/config/guake.settings
 
