@@ -29,6 +29,12 @@
       </value>
     </entry>
     <entry>
+      <key>general/open_tab_cwd</key>
+      <value>
+        <bool>true</bool>
+      </value>
+    </entry>
+    <entry>
       <key>general/prompt_on_quit</key>
       <schema_key>/schemas/apps/guake/general/prompt_on_quit</schema_key>
       <value>
@@ -52,6 +58,13 @@
     <entry>
       <key>general/show_resizer</key>
       <schema_key>/schemas/apps/guake/general/show_resizer</schema_key>
+      <value>
+        <bool>false</bool>
+      </value>
+    </entry>
+    <entry>
+      <key>general/start_fullscreen</key>
+      <schema_key>/schemas/apps/guake/general/start_fullscreen</schema_key>
       <value>
         <bool>false</bool>
       </value>
@@ -96,6 +109,13 @@
       <schema_key>/schemas/apps/guake/general/use_trayicon</schema_key>
       <value>
         <bool>false</bool>
+      </value>
+    </entry>
+    <entry>
+      <key>general/use_vte_titles</key>
+      <schema_key>/schemas/apps/guake/general/use_vte_titles</schema_key>
+      <value>
+        <bool>true</bool>
       </value>
     </entry>
     <entry>
@@ -235,7 +255,7 @@
       <key>style/background/transparency</key>
       <schema_key>/schemas/apps/guake/style/background/transparency</schema_key>
       <value>
-        <int>0</int>
+        <int>10</int>
       </value>
     </entry>
     <entry>
@@ -256,7 +276,7 @@
       <key>style/font/style</key>
       <schema_key>/schemas/apps/guake/style/font/style</schema_key>
       <value>
-        <string>DejaVu Sans Mono 10</string>
+        <string>Droid Sans Mono 13</string>
       </value>
     </entry>
   </entrylist>
