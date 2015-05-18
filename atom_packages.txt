@@ -1,0 +1,4 @@
+file-icons
+file-types
+react
+language-jsx
