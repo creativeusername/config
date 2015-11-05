@@ -25,8 +25,12 @@ sudo apt-get -y --force-yes upgrade
 # Install apps. Comment out if not needed
 sudo apt-get -y install \
     guake \
+    vim \
+    tmux \
+    aptitude \
     git \
     curl \
+    gnome-system-monitor \
     elementary-tweaks \
     google-chrome-stable \
     atom
@@ -34,9 +38,9 @@ sudo apt-get -y install \
 
 # Configure System
 cd ~/Git && git clone https://github.com/creativeusername/config.git && cd ~
-cp -f ~/Git/config/bash_aliases ~/.bash_aliases
-cp -f ~/Git/config/bashrc ~/.bashrc
-cp -f ~/Git/config/gitconfig ~/.gitconfig
+ln -sf ~/Git/config/bash_aliases ~/.bash_aliases
+ln -sf ~/Git/config/bashrc ~/.bashrc
+ln -sf ~/Git/config/gitconfig ~/.gitconfig
 gconftool --load ~/Git/config/guake.settings
 
 # Install Node Version Manager
