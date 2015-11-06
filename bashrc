@@ -170,3 +170,8 @@ xterm*|rxvt*)
 *)
     ;;
 esac
+
+# Source all paths which extend the default path
+if [ -f ~/.pathrc ]; then
+    . ~/.pathrc
+fi
