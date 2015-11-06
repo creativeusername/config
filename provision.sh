@@ -41,6 +41,7 @@ cd ~/Git && git clone https://github.com/creativeusername/config.git && cd ~
 ln -sf ~/Git/config/bash_aliases ~/.bash_aliases
 ln -sf ~/Git/config/bashrc ~/.bashrc
 ln -sf ~/Git/config/gitconfig ~/.gitconfig
+ln -sf ~/Git/config/tmux.conf ~/.tmux.conf
 gconftool --load ~/Git/config/guake.settings
 
 # Install Node Version Manager
