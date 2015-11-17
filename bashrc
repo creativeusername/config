@@ -175,3 +175,5 @@ esac
 if [ -f ~/.pathrc ]; then
     . ~/.pathrc
 fi
+
+TERM='screen-256color'
