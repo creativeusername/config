@@ -42,6 +42,12 @@ ln -sf ~/Git/config/bash_aliases ~/.bash_aliases
 ln -sf ~/Git/config/bashrc ~/.bashrc
 ln -sf ~/Git/config/gitconfig ~/.gitconfig
 ln -sf ~/Git/config/tmux.conf ~/.tmux.conf
+
+# Configure Vim
+ln -sf ~/Git/config/vimrc.local ~/.vimrc.local
+ln -sf ~/Git/config/vimrc.before.local ~/.vimrc.before.local
+ln -sf ~/Git/config/vimrc.bundles.local ~/.vimrc.bundles.local
+
 gconftool --load ~/Git/config/guake.settings
 
 # Install Node Version Manager
