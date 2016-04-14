@@ -171,9 +171,10 @@ xterm*|rxvt*)
     ;;
 esac
 
-# Source all paths which extend the default path
+# Source file to add some libraries to path (nvm, rvm, ...)
 if [ -f ~/.pathrc ]; then
     . ~/.pathrc
 fi
 
 TERM='screen-256color'
+

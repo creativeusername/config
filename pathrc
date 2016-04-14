@@ -1,3 +1,9 @@
 
-export NVM_DIR="/home/make/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+#export NVM_DIR="/home/make/.nvm"
+[ -s "$HOME/.nvm/nvm.sh" ] && source "$HOME/.nvm/nvm.sh"  # This loads nvm
+
+# Load RVM into a shell session *as a function*
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# Misc
+export EDITOR="vim"

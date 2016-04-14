@@ -8,6 +8,8 @@
 ######################################################################
 
 # Useful Navigation
+alias sudo='sudo '
+alias ag='apt-get'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias gopen='gnome-open'
@@ -18,3 +20,4 @@ alias la='ls -AF'
 alias l='ls -l'
 alias cl='clear'
 alias agrep='la | grep'
+
