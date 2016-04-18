@@ -1,2 +1,4 @@
 file-icons
-file-types
+minimap
+tomorrow-night-eighties-syntax
+atom-monokai
