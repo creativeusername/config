@@ -1,0 +1,27 @@
+#  Set colors for less pager
+#
+#  Use color code defined by the terminal (same as
+#  the ones you use in coloring the prompt)
+#
+#  Black 0;30m, Red 0;31m, Green 0;32m, Yellow 0;33m
+#  Blue 0;34m, Purple 0;35m, Cyan 0;36m, Grey 0;37m
+#
+#  Use a 1 instead of 0 for a bold color.
+#
+#  Default color ist 0m and default bold is 1m
+
+#  lesskey does not function as expected so this is
+#  a temporary fix
+
+
+# mb (mode blinking) - md (mode bold) - me (mode end)
+#LESS_TERMCAP_md=$'\e'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m \]'
+# us (underline start) - ue (underline end)
+export LESS_TERMCAP_us=$'\e[0;34m'
+export LESS_TERMCAP_ue=$'\e[0m \]'
+# so (standout start) - se (standout end)
+export LESS_TERMCAP_so=$'\e'
+export LESS_TERMCAP_se=$'\e[0m \]'
+

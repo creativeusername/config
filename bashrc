@@ -176,5 +176,10 @@ if [ -f ~/.pathrc ]; then
     . ~/.pathrc
 fi
 
+if [ -f ~/.lesskey_exports ]; then
+    . ~/.lesskey_exports
+fi
+
 TERM='screen-256color'
+
 
