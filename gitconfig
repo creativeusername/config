@@ -17,6 +17,8 @@
   autosetuprebase = always
 [push]
   default = current
+[pull]
+  default = current
 [rerere]
   enabled = true
 [core]

@@ -20,4 +20,4 @@ alias la='ls -AF'
 alias l='ls -l'
 alias cl='clear'
 alias agrep='la | grep'
-
+alias mux='tmuxinator'
