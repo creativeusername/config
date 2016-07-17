@@ -1,0 +1,16 @@
+# ~/.tmuxinator/default.yml
+
+name: Git
+root: ~/Git/
+
+# pre:
+# pre_window:
+
+startup_window: Term
+
+windows:
+  - Server:
+  - Console:
+  - Term:
+  - Vim:
+  - Specs:
