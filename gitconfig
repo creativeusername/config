@@ -27,3 +27,4 @@
 [core]
   editor = vim
   autocrlf = input
+  excludesfile = ~/.gitexcludes
