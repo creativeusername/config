@@ -60,12 +60,22 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-# Add git branch if its present to PS1
-parse_git_branch() {
- git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+# Add gemset and ruby version to prompt if present
+function prompt_rvm {
+    rbv=`rvm-prompt`
+    rbv=${rbv#ruby-}
+    [[ $rbv == *"@"* ]] || rbv="${rbv}@default"
+    echo $rbv
 }
+
+# Add git branch if its present to PS1
+function prompt_git {
+ git_prompt=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'`
+ echo $git_prompt
+}
+
 if [ "$color_prompt" = yes ]; then
-  PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\] $(parse_git_branch)\[\033[00m\] (\t)\n  $ '
+  PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\] $(prompt_git) $(prompt_rvm)\[\033[00m\] (\t)\n  $ '
 else
  PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w $(parse_git_branch)\ $ '
 fi
