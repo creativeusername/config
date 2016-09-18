@@ -1,0 +1,16 @@
+
+" Don't use spell checking
+set nospell
+set so=999
+
+:map <C-n> :NERDTreeToggle<CR>
+colorscheme Tomorrow-Night
+
+if has('gui_running')
+  colorscheme base16-tomorrow-night
+  set guifont=Monospace\ Regular\ 15
+  set go=
+  autocmd GUIEnter * set vb t_vb=
+
+  highlight SpellBad term=underline gui=undercurl guisp=Orange
+endif

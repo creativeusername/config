@@ -1,9 +1,0 @@
-
-" Don't restore cursor position opening a known file
-let g:spf13_no_restore_cursor = 1
-
-" No omni complete
-let g:spf13_no_omni_complete = 1
-
-" My personal bundle groups
-let g:spf13_bundle_groups=[ 'general', 'programming', 'snipmate', 'ruby', 'javascript', 'html', 'misc' ]
