@@ -4,10 +4,11 @@ let mapleader = ","
 au BufWritePost .vimrc so $MYVIMRC
 au BufEnter *.rb syn match error contained "\<binding.pry\>"
 
-"set ttyfast
-"set ttyscroll=13
-"set lazyredraw
+set ttyfast
+set ttyscroll=1
+set lazyredraw
 
+let base16colorspace=256
 :nnoremap ; :
 :inoremap jj <ESC>
 :inoremap ii <Nop>
