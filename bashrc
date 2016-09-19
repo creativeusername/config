@@ -181,6 +181,10 @@ xterm*|rxvt*)
     ;;
 esac
 
+# Source profile helper for correct base16 colors in vim
+BASE16_SHELL=$HOME/Share/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+
 # Source a fancy bash prompt
 if [ -f ~/.bash_prompt ]; then
     . ~/.bash_prompt
