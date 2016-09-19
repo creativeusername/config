@@ -75,7 +75,7 @@ function prompt_git {
 }
 
 if [ "$color_prompt" = yes ]; then
-  PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\] $(prompt_git) $(prompt_rvm)\[\033[00m\] (\t)\n  $ '
+ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\] $(prompt_git) $(prompt_rvm)\[\033[00m\] (\t)\n  $ '
 else
  PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w $(parse_git_branch)\ $ '
 fi
@@ -180,6 +180,11 @@ xterm*|rxvt*)
 *)
     ;;
 esac
+
+# Source a fancy bash prompt
+if [ -f ~/.bash_prompt ]; then
+    . ~/.bash_prompt
+fi
 
 # Source file to add some libraries to path (nvm, rvm, ...)
 if [ -f ~/.pathrc ]; then
