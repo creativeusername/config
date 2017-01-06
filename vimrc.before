@@ -12,14 +12,22 @@ set so=999
 
 let base16colorspace=256
 
-:nnoremap	<leader>so :mapc!<cr> :mapc<cr> :source ~/.vimrc<cr>
+" ---------------------------------------------------------------- {{{
+"                           Keybindings
+" ---------------------------------------------------------------- {{{
+
+:nnoremap	<leader>so :mapc<cr> :source ~/.vimrc<cr>
+
+" Movement ------------------------------------------------------------ {{{
 :nnoremap ; :
 :inoremap jj <ESC>
 :inoremap <BS> <Nop>
-:nnoremap <c-a> 0
-:nnoremap <c-e> $
+
+" Editing ------------------------------------------------------------ {{{
 ":noremap y "+Y
 ":noremap p "+gP
+
+" Tabs ---------------------------------------------------------------- {{{
 :nnoremap L :tabnext<cr>
 :nnoremap H :tabprevious<cr>
 
@@ -27,7 +35,16 @@ let base16colorspace=256
 :autocmd FileType nerdtree nmap <buffer> l o
 :autocmd FileType nerdtree nmap <buffer> h x
 :autocmd FileType nerdtree nmap <buffer> <Space> o
-" }}}
+"}}}
+
+" Scratch ----------------------------------------------------------------- {{{
+set hidden
+let g:scratch_no_mappings = 1
+"let g:scratch_insert_autohide = 1
+let g:scratch_height = 15
+:nnoremap ss :ScratchPreview<cr>
+:nnoremap SS :Scratch<cr>
+:nnoremap <leader>s :ScratchInsert<cr>
 
 " Folding ----------------------------------------------------------------- {{{
 set foldmethod=syntax
@@ -52,6 +69,10 @@ nnoremap zO zczO
 " I use :sus for the rare times I want to actually background Vim.
 nnoremap <c-z> mzzMzvzz15<c-e>`z
 
+" ---------------------------------------------------------------- {{{
+"                           Functions
+" ---------------------------------------------------------------- {{{
+
 function! MyFoldText() " {{{
     let line = getline(v:foldstart)
 
@@ -69,8 +90,3 @@ function! MyFoldText() " {{{
 endfunction " }}}
 set foldtext=MyFoldText()
 " }}}
-
-"  Scratch.vim
-"set hidden
-"let g:scratch_autohide = &hidden
-"let g:scratch_insert_autohide = 1
