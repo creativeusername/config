@@ -1,7 +1,6 @@
 
 " Don't use spell checking
 set nospell
-set so=999
 
 :map <C-n> :NERDTreeToggle<CR>
 colorscheme base16-tomorrow-night

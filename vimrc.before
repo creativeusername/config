@@ -1,24 +1,28 @@
 
 let mapleader = ","
 
-au BufWritePost .vimrc so $MYVIMRC
-au BufEnter *.rb syn match error contained "\<binding.pry\>"
+:au BufWritePost .vimrc.after so $MYVIMRC
+:au BufEnter *.rb syn match error contained "\<binding.pry\>"
 
 set ttyfast
 set ttyscroll=1
 set lazyredraw
+set relativenumber
+set so=999
 
 let base16colorspace=256
+
+:nnoremap	<leader>so :mapc!<cr> :mapc<cr> :source ~/.vimrc<cr>
 :nnoremap ; :
 :inoremap jj <ESC>
-:inoremap ii <Nop>
+:inoremap <BS> <Nop>
 :nnoremap <c-a> 0
 :nnoremap <c-e> $
-:noremap y "+Y
-:noremap p "+gP
+":noremap y "+Y
+":noremap p "+gP
+:nnoremap L :tabnext<cr>
+:nnoremap H :tabprevious<cr>
 
-:noremap <c-l> :tabnext<cr>
-:noremap <c-h> :tabprevious<cr>
 " NERDTree----------------------------------------------------------------- {{{
 :autocmd FileType nerdtree nmap <buffer> l o
 :autocmd FileType nerdtree nmap <buffer> h x
@@ -64,7 +68,9 @@ function! MyFoldText() " {{{
     return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
 endfunction " }}}
 set foldtext=MyFoldText()
-
-
 " }}}
 
+"  Scratch.vim
+"set hidden
+"let g:scratch_autohide = &hidden
+"let g:scratch_insert_autohide = 1
