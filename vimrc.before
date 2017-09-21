@@ -1,52 +1,84 @@
 
+"{{{ Autocommands
+"
 let mapleader = ","
 
 :au BufWritePost .vimrc.after so $MYVIMRC
 :au BufEnter *.rb syn match error contained "\<binding.pry\>"
+:au BufEnter *.rb syn match error contained "\<TODO>"
+
+:autocmd VimEnter * AirlineTheme term
+:autocmd VimEnter * AirlineTheme base16_shell
+:autocmd VimEnter * highlight MatchParen ctermbg=red ctermfg=yellow
+
+"}}}
 
 set ttyfast
 set ttyscroll=1
 set lazyredraw
 set relativenumber
 set so=999
+set pastetoggle=<F2>
+set noswapfile
+
 
 let base16colorspace=256
 
-" ---------------------------------------------------------------- {{{
-"                           Keybindings
-" ---------------------------------------------------------------- {{{
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
+
 
 :nnoremap	<leader>so :mapc<cr> :source ~/.vimrc<cr>
+:nnoremap <leader>cp :Goyo<cr>
 
-" Movement ------------------------------------------------------------ {{{
+:nnoremap <leader>1 Obinding.pry<ESC>0:w<cr>
+:nnoremap <leader>2 O<% binding.pry %><ESC>0:w<cr>
+
+:nnoremap <leader>o :only<cr>
+:nnoremap <leader>wo <c-w>T
+
+:vnoremap <leader>Y "+Y
+:nnoremap <leader>p "+gp
+:nnoremap <leader>P "+gP
+
+" Quickfix navigation
+:nnoremap <leader>qo :cw<cr>
+:nnoremap <leader>qc :ccl<cr>
+:nnoremap <leader>qn :cn<cr>
+
+" Search for visually selected tect
+:vnoremap // y<C-R>"<cr>
+
+
 :nnoremap ; :
 :inoremap jj <ESC>
-:inoremap <BS> <Nop>
+:inoremap <PageUp> <Nop>
+:inoremap <PageDown> <Nop>
 
-" Editing ------------------------------------------------------------ {{{
 ":noremap y "+Y
 ":noremap p "+gP
 
-" Tabs ---------------------------------------------------------------- {{{
 :nnoremap L :tabnext<cr>
 :nnoremap H :tabprevious<cr>
 
-" NERDTree----------------------------------------------------------------- {{{
 :autocmd FileType nerdtree nmap <buffer> l o
 :autocmd FileType nerdtree nmap <buffer> h x
 :autocmd FileType nerdtree nmap <buffer> <Space> o
 "}}}
 
-" Scratch ----------------------------------------------------------------- {{{
+:nnoremap <F3> :Tagbar<cr>
+"}}}
+
 set hidden
 let g:scratch_no_mappings = 1
 "let g:scratch_insert_autohide = 1
 let g:scratch_height = 15
+let g:scratch_persistence_file = '.buffer.scratch'
 :nnoremap ss :ScratchPreview<cr>
 :nnoremap SS :Scratch<cr>
 :nnoremap <leader>s :ScratchInsert<cr>
 
-" Folding ----------------------------------------------------------------- {{{
 set foldmethod=syntax
 set foldlevelstart=2
 
@@ -69,9 +101,6 @@ nnoremap zO zczO
 " I use :sus for the rare times I want to actually background Vim.
 nnoremap <c-z> mzzMzvzz15<c-e>`z
 
-" ---------------------------------------------------------------- {{{
-"                           Functions
-" ---------------------------------------------------------------- {{{
 
 function! MyFoldText() " {{{
     let line = getline(v:foldstart)
@@ -90,3 +119,25 @@ function! MyFoldText() " {{{
 endfunction " }}}
 set foldtext=MyFoldText()
 " }}}
+"
+"
+let g:markdown_composer_autostart = 0
+let g:markdown_composer_open_browser = 0
+let g:markdown_composer_syntax_theme = 'tomorrow-night'
+
+" JSX Syntax Highliting
+let g:jsx_ext_required = 0
+
+" GOYO Settings
+let g:goyo_width = 140
+let g:goyo_height = '95%'
+"let g:goyo_linenr = 1
+
+let g:airline#extensions#tmuxline#enabled = 0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = '\'
+let g:airline_powerline_fonts = 1
+let g:airline_theme='base16_shell'
+
+
