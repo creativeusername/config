@@ -27,6 +27,10 @@ alias sure='./bin/sure'
 alias day='sh ~/Share/base16-shell/scripts/base16-solarized-light.sh'
 alias night='sh ~/Share/base16-shell/scripts/base16-tomorrow-night.sh'
 
+# Only run spec files which a different from master, since we can expect not modified specs
+# to run properly.
+alias branch_spec='bundle exec rspec $(git diff --diff-filter=AM --name-status master..HEAD | grep _spec.rb | cut -c 3- | paste -sd " ")'
+
 
 # Create function which easily changes symbolic link to needed version
 # sudo ln -sf /opt/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs

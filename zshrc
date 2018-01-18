@@ -53,7 +53,7 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git ruby rails)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -86,11 +86,14 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-BASE16_SHELL=$HOME/Share/base16-shell/
+alias day=base16_solarized-light
+alias night=base16_tomorrow-night
+alias rof='rspec --only-failures'
+alias branch_specs='bundle exec rspec $(git diff --diff-filter=AM --name-status master..HEAD | grep _spec.rb | cut -c 3- | paste -sd " ")'
+
+#BASE16_SHELL=$HOME/Share/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 
-# Aliases
-
-alias day=base16_solarized-light
-alias night=base16_tomorrow-night
+# fpath=(~/.zsh/completion $fpath)
+# autoload -Uz compinit && compinit -i
