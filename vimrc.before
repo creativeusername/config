@@ -20,9 +20,7 @@ set relativenumber
 set so=999
 set pastetoggle=<F2>
 set noswapfile
-
-
-let base16colorspace=256
+set termguicolors
 
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
@@ -45,7 +43,12 @@ set undodir=~/.vim/undo//
 " Quickfix navigation
 :nnoremap <leader>qo :cw<cr>
 :nnoremap <leader>qc :ccl<cr>
-:nnoremap <leader>qn :cn<cr>
+:nnoremap <leader>qq :cn<cr>
+
+" Location List navigation
+:nnoremap <leader>lo :lw<cr>
+:nnoremap <leader>lc :lcl<cr>
+:nnoremap <leader>ll :lne<cr>
 
 " Search for visually selected tect
 :vnoremap // y<C-R>"<cr>
@@ -140,4 +143,13 @@ let g:airline#extensions#tabline#left_alt_sep = '\'
 let g:airline_powerline_fonts = 1
 let g:airline_theme='base16_shell'
 
+" Rubocop
+let g:vimrubocop_config = '~/.rubocop.yml'
+let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby'] }
+let g:syntastic_auto_jump = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
